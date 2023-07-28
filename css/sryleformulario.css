@@ -8,7 +8,7 @@ body {
     height: 100vh;
 }
 
-.register-container {
+.login-container {
     background-color: #fff;
     padding: 20px;
     border-radius: 5px;
@@ -21,19 +21,19 @@ h1 {
     text-align: center;
 }
 
-.register-form label {
+.login-form label {
     display: block;
     margin-top: 10px;
 }
 
-.register-form input {
+.login-form input {
     width: 93%;
     margin-bottom: 10px;
     padding: 10px;
     font-size: 16px;
 }
 
-.register-form button {
+.login-form button {
     width: 100%;
     padding: 10px;
     background-color: #007bff;
@@ -44,6 +44,6 @@ h1 {
     cursor: pointer;
 }
 
-.register-form button:hover {
+.login-form button:hover {
     background-color: #0056b3;
 }
