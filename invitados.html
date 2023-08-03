@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registro de invitados</title>
+    <link rel="stylesheet" href="css/styleInvitados.css">
+</head>
+
+<body>
+
+    <form class="login-form" onsubmit="login(event)">
+        <h1>Registro de invitados</h1>
+        <div class="login-container">
+            <div class="login-form-flex">
+                <div class="item">
+                    <label for="persona">Nombre de la persona o familia:</label>
+                    <input type="text" id="persona" required>
+                </div>
+                <div class="item">
+                    <label for="cantidad">Cantidad de personas:</label>
+                    <input type="number" id="cantidad" required>
+                </div>
+
+            </div>
+
+            <div>
+                <label for="observaciones">Observaciones:</label>
+                <input type="text" id="observaciones" required>
+            </div>
+            <button class="btn-add" type="submit">Agregar</button>
+    </form>
+
+    <div>
+        <table class="events-table">
+            <tr>
+                <th>Fecha</th>
+                <th>Evento</th>
+                <th>Acciones</th>
+            </tr>
+            <tr>
+                <td>2023-07-27</td>
+                <td>Evento 1</td>
+                <td class="event-actions">
+                    <a id="btn-edit" class="btn-edit" href="invitados.html">Editar</a>
+                    <a class="btn-delete">Eliminar</a>
+                </td>
+            </tr>
+            <tr>
+                <td>2023-07-28</td>
+                <td>Evento 2</td>
+                <td class="event-actions">
+                    <a id="btn-edit" class="btn-edit" href="invitados.html">Editar</a>
+                    <a class="btn-delete">Eliminar</a>
+                </td>
+            </tr>
+        </table>
+
+    </div>
+</body>
+
+</html>

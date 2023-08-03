@@ -1,49 +1,111 @@
-body {
-    font-family: Arial, sans-serif;
-    background-color: #f0f0f0;
+/* Resetear estilos por defecto */
+* {
+    box-sizing: border-box;
     margin: 0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-}
-
-.register-container {
-    background-color: #fff;
-    padding: 20px;
-    border-radius: 5px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    padding: 0;
+  }
+  
+  body {
+    font-family: 'Roboto', sans-serif;
+    line-height: 1.6;
+    background-color: #f0f0f0;
+  }
+  
+  .register-container {
     max-width: 400px;
-    width: 100%;
-}
-
-h1 {
+    margin: 50px auto;
+    padding: 30px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  h1 {
     text-align: center;
-}
-
-.register-form label {
-    display: block;
-    margin-top: 10px;
-}
-
-.register-form input {
-    width: 93%;
-    margin-bottom: 10px;
-    padding: 10px;
+    margin-bottom: 20px;
+    color: #333;
+    font-size: 28px;
+  }
+  
+  .register-form {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  label {
+    font-weight: bold;
+    margin-bottom: 8px;
+    color: #666;
+  }
+  
+  input[type="text"],
+  input[type="password"] {
+    padding: 12px;
+    border: 2px solid #ccc;
+    border-radius: 8px;
     font-size: 16px;
-}
-
-.register-form button {
-    width: 100%;
-    padding: 10px;
+    transition: border-color 0.3s ease;
+  }
+  
+  input[type="text"]:focus,
+  input[type="password"]:focus {
+    border-color: #007bff;
+  }
+  
+  button {
+    padding: 12px;
     background-color: #007bff;
     color: #fff;
-    font-size: 16px;
     border: none;
-    border-radius: 3px;
+    border-radius: 8px;
     cursor: pointer;
-}
-
-.register-form button:hover {
+    font-size: 18px;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    margin-top: 20px;
+  }
+  
+  button:hover {
     background-color: #0056b3;
-}
+    transform: translateY(-3px);
+  }
+  
+  /* Estilo para el enlace de registro */
+  a {
+    color: #007bff;
+    text-decoration: none;
+    display: block;
+    text-align: center;
+    margin-top: 20px;
+  }
+  
+  a:hover {
+    text-decoration: underline;
+  }
+  
+  /* Estilo para el formulario */
+  .register-form {
+    background-color: #f9f9f9;
+    padding: 20px;
+    border-radius: 10px;
+  }
+  
+  /* Estilo para los campos de entrada */
+  input[type="text"],
+  input[type="password"] {
+    margin-bottom: 15px;
+  }
+  
+  /* Estilo para el botón de registro */
+  button {
+    margin-top: 30px;
+  }
+  
+  /* Estilo para el fondo */
+  body {
+    background-image: url('ruta_de_tu_imagen.jpg');
+    background-size: cover;
+    background-position: center;
+  }
+  
+  
+  

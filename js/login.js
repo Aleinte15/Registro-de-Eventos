@@ -12,7 +12,7 @@ function login(event) {
         if (username === user.username && password === user.password) {
             // Inicio de sesión exitoso
             // Guardamos el estado de inicio de sesión en localStorage
-            localStorage.setItem('loggedIn', 'true');
+            localStorage.setItem('loggedIn', username);
 
             // Redirigimos a la página del menú
             window.location.href = 'menu.html';

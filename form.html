@@ -4,32 +4,32 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="css/sryleformulario.css">
+    <title>Agregar evento</title>
+    <link rel="stylesheet" href="css/styleForm.css">
 </head>
 
 <body>
     <div class="login-container">
-        <h1>Registro de Eventos</h1>
+        <h1>Registro de evento</h1>
         <form class="login-form" onsubmit="login(event)">
             <label for="persona">Nombre del responsable:</label>
             <input type="nombre" id="Nombre del responsable " required>
             <label for="contraseña">Constraseña del responsable:</label>
             <input type="contraseña" id="Contraseña del responsable" required>
-            <label for="correo">Correo del responsable:</label>
-            <input type="correo" id="Correo del responsable" required>
+            <label for="correo">Correo electronico:</label>
+            <input type="email" id="Correo del responsable" required>
             <label for="evento">Nombre del evento:</label>
             <input type="evento" id="Nombre del evento" required>
             <label for="fecha">Fecha del evento:</label>
-            <input type="fecha" id="Fecha del evento" required>
+            <input type="date" id="Fecha del evento" required>
             <label for="cantidad">Cantidad de invitados:</label>
-            <input type="cantidad" id="Cantidad de invitados" required>
+            <input type="number" id="Cantidad de invitados" required>
             <button type="submit">Guardar</button>
         </form>
     </div>
 
 
 </body>
-<script src="js/formulario.js"></script>
+<script src="js/eventos.js"></script>
 
 </html>

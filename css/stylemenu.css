@@ -1,89 +1,67 @@
-/* styleOpciones.css */
-
-/* Estilos generales para el cuerpo de la página */
-body {
-    font-family: Arial, sans-serif;
+/* Resetear estilos por defecto */
+* {
+    box-sizing: border-box;
     margin: 0;
     padding: 0;
-    background-color: #f7f7f7;
-}
-
-/* Estilos para el contenedor de opciones */
-.opciones-container {
-    background-color: #ffffff;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    padding: 20px;
-    max-width: 400px;
-    margin: 50px auto;
-    border-radius: 10px;
-}
-
-/* Estilos para el encabezado de opciones */
-.opciones-container h1 {
-    text-align: center;
-    margin-bottom: 20px;
-    color: #333333;
-}
-
-/* Estilos para la lista de opciones */
-.opciones-list {
-    list-style: none;
-    padding: 0;
-}
-
-/* Estilos para los elementos de la lista de opciones */
-.opciones-list li {
-    margin-bottom: 10px;
-}
-
-/* Estilos para los enlaces de las opciones */
-.opciones-list a {
-    display: block;
-    padding: 10px;
+  }
+  
+  body {
+    font-family: 'Roboto', sans-serif;
+    line-height: 1.6;
+    background-color: #f0f0f0;
+    margin: 0;
+  }
+  
+  .menu {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
     background-color: #007bff;
-    color: #ffffff;
-    text-decoration: none;
-    border-radius: 5px;
-    transition: background-color 0.2s ease;
-}
-
-.opciones-list a:hover {
-    background-color: #0056b3;
-}
-
-
-.opciones-container {
-    text-align: center;
-    /* Centra el contenido horizontalmente */
-}
-
-.boton {
-    display: inline-block;
-    /* Muestra los enlaces como elementos en línea con dimensiones */
-    margin: 5px;
-    /* Espacio entre los botones */
-    padding: 15px 25px;
-    /* Relleno interno para hacer que los botones sean más grandes */
-    background-color: #007bff;
-    /* Color de fondo inicial */
+    padding: 10px 30px;
     color: #fff;
-    /* Color del texto */
+  }
+  
+  .menu-options {
+    display: flex;
+    align-items: center;
+  }
+  
+  .menu-option {
+    margin-right: 20px;
+  }
+  
+  .menu-option a {
+    color: #fff;
     text-decoration: none;
-    /* Quita el subrayado predeterminado en los enlaces */
-    border: none;
-    /* Elimina el borde predeterminado */
-    border-radius: 5px;
-    /* Borde redondeado */
-    transition: background-color 0.3s;
-    /* Agrega una transición suave para el cambio de color */
-}
-
-.boton:hover {
+    font-size: 18px;
+    padding: 10px 20px;
+    border-radius: 10px;
     background-color: #0056b3;
-    /* Cambia el color de fondo al hacer hover */
-}
-
-.boton:active {
-    transform: translateY(2px);
-    /* Agrega un efecto de "cover" al hacer clic */
-}
+  }
+  
+  .menu-option a:hover {
+    background-color: #00509b;
+  }
+  
+  .menu-logout a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 18px;
+    padding: 10px 20px;
+    border-radius: 10px;
+    background-color: #dc3545;
+  }
+  
+  .menu-logout a:hover {
+    background-color: #c82333;
+  }
+  
+  #name {
+    text-align: right;
+    padding-right: 30px;
+    font-size: 18px;
+    color: #333;
+    margin-top: 10px;
+  }
+  
+  

@@ -4,12 +4,17 @@ function register(event) {
     // Obtenemos los valores de los campos de usuario y contraseña
     const username = document.getElementById('username').value;
     const password = document.getElementById('password').value;
+    const name = document.getElementById('name').value;
     const confirmPassword = document.getElementById('confirm-password').value;
 
     // Validamos que las contraseñas coincidan
     if (password !== confirmPassword) {
         alert('Las contraseñas no coinciden. Por favor, inténtalo de nuevo.');
         return;
+    } 
+    if (name == null && name == ""){
+        alert ('El nombre no puede quedar vacio');
+
     }
 
     // Aquí podrías realizar más validaciones adicionales si es necesario
@@ -17,7 +22,11 @@ function register(event) {
     // Guardamos la información del nuevo usuario (puedes usar localStorage o cualquier otro medio)
     const newUser = {
         username: username,
-        password: password
+        password: password,
+        name: name,
+        autentificado: true
+
+        
     };
     saveUser(newUser);
 
