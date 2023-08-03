@@ -1,12 +1,9 @@
 function login(event) {
     event.preventDefault();
 
-    // Obtenemos los valores de los campos de usuario y contraseña
     const username = document.getElementById('username').value;
     const password = document.getElementById('password').value;
     var user = findUser(username);
-
-    // Validamos el inicio de sesión (puedes implementar tu lógica de autenticación aquí)
 
     if (user != null) {
         if (username === user.username && password === user.password) {

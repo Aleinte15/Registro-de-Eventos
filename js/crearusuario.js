@@ -1,7 +1,6 @@
 function register(event) {
     event.preventDefault();
 
-    // Obtenemos los valores de los campos de usuario y contraseña
     const username = document.getElementById('username').value;
     const password = document.getElementById('password').value;
     const name = document.getElementById('name').value;

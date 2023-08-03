@@ -11,19 +11,19 @@
 <body>
     <div class="login-container">
         <h1>Registro de evento</h1>
-        <form class="login-form" onsubmit="login(event)">
-            <label for="persona">Nombre del responsable:</label>
-            <input type="nombre" id="Nombre del responsable " required>
+        <form class="login-form" onsubmit="crearEvento(event)">
+            <label for="persona">Nombre el responsable:</label>
+            <input type="nombre" id="nombre" required>
             <label for="contraseña">Constraseña del responsable:</label>
-            <input type="contraseña" id="Contraseña del responsable" required>
+            <input type="contraseña" id="contraseña" required>
             <label for="correo">Correo electronico:</label>
-            <input type="email" id="Correo del responsable" required>
+            <input type="email" id="correo" required>
             <label for="evento">Nombre del evento:</label>
-            <input type="evento" id="Nombre del evento" required>
+            <input type="evento" id="nombreEvento" required>
             <label for="fecha">Fecha del evento:</label>
-            <input type="date" id="Fecha del evento" required>
+            <input type="date" id="fechaEvento" required>
             <label for="cantidad">Cantidad de invitados:</label>
-            <input type="number" id="Cantidad de invitados" required>
+            <input type="number" id="cantidadInvitados" required>
             <button type="submit">Guardar</button>
         </form>
     </div>
