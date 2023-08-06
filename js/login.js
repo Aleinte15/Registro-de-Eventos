@@ -1,3 +1,10 @@
+document.addEventListener("DOMContentLoaded", function () {
+    //Elimnar la session
+    localStorage.setItem('sessionActive', false);
+
+});
+
+
 function login(event) {
     event.preventDefault();
 
@@ -10,6 +17,7 @@ function login(event) {
             // Inicio de sesión exitoso
             // Guardamos el estado de inicio de sesión en localStorage
             localStorage.setItem('loggedIn', username);
+            localStorage.setItem('sessionActive', true);
 
             // Redirigimos a la página del menú
             window.location.href = 'menu.html';

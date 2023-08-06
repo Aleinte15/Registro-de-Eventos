@@ -1,12 +1,47 @@
-body {
-    font-family: Arial, sans-serif;
-    background-color: #f0f0f0;
-    margin: 0;
+.menu {
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
-    height: 100vh;
+    background-color: #007bff;
+    padding: 10px 30px;
+    color: #fff;
 }
+
+.menu-options {
+    display: flex;
+    align-items: center;
+}
+
+.menu-option {
+    margin-right: 20px;
+}
+
+.menu-option a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 18px;
+    padding: 10px 20px;
+    border-radius: 10px;
+    background-color: #0056b3;
+}
+
+.menu-option a:hover {
+    background-color: #00509b;
+}
+
+.menu-logout a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 18px;
+    padding: 10px 20px;
+    border-radius: 10px;
+    background-color: #dc3545;
+}
+
+.menu-logout a:hover {
+    background-color: #c82333;
+}
+
 
 .login-container {
     background-color: #fff;

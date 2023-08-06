@@ -9,11 +9,12 @@ function crearEvento(event) {
 
     var idEvento = localStorage.getItem("idEvento");
     if (idEvento) {
-        idEvento += 1;
+        idEvento = parseInt(idEvento) + 1;
+        localStorage.setItem("idEvento", idEvento);
 
     } else {
-        idEvento =  1;
-        localStorage.setItem("idEvento" , idEvento);
+        idEvento = 1;
+        localStorage.setItem("idEvento", idEvento);
     }
     var nameLocal = localStorage.getItem('loggedIn');
     const nuevoEvento = {
@@ -42,5 +43,6 @@ function saveEvento(evento) {
     const eventos = JSON.parse(localStorage.getItem('eventos')) || [];
     eventos.push(evento);
     localStorage.setItem('eventos', JSON.stringify(eventos));
-    console.log(localStorage.getItem("eventos"));
+    alert("Evento creado")
+    window.location.href = 'invitados.html';
 }

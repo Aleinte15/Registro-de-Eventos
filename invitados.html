@@ -10,8 +10,22 @@
 
 <body>
 
-    <form class="login-form" onsubmit="login(event)">
-        <h1>Registro de invitados</h1>
+    <div class="menu">
+        <div class="menu-options">
+            <div class="menu-option">
+                <a href="crearevento.html">Crear Eventos</a>
+            </div>
+            <div class="menu-option">
+                <a href="eventos.html">Entrar a un Evento</a>
+            </div>
+        </div>
+        <div class="menu-logout">
+            <a id="btnSession">Cerrar Sesión</a>
+        </div>
+    </div>
+
+    <form class="login-form" onsubmit="register(event)">
+        <h1 id="title-eventos">Registro de invitados</h1>
         <div class="login-container">
             <div class="login-form-flex">
                 <div class="item">
@@ -32,32 +46,11 @@
             <button class="btn-add" type="submit">Agregar</button>
     </form>
 
-    <div>
-        <table class="events-table">
-            <tr>
-                <th>Fecha</th>
-                <th>Evento</th>
-                <th>Acciones</th>
-            </tr>
-            <tr>
-                <td>2023-07-27</td>
-                <td>Evento 1</td>
-                <td class="event-actions">
-                    <a id="btn-edit" class="btn-edit" href="invitados.html">Editar</a>
-                    <a class="btn-delete">Eliminar</a>
-                </td>
-            </tr>
-            <tr>
-                <td>2023-07-28</td>
-                <td>Evento 2</td>
-                <td class="event-actions">
-                    <a id="btn-edit" class="btn-edit" href="invitados.html">Editar</a>
-                    <a class="btn-delete">Eliminar</a>
-                </td>
-            </tr>
-        </table>
+    <div id="tablaContainer"></div>
 
-    </div>
+
 </body>
+
+<script src="js/Invitados.js"></script>
 
 </html>

@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mis Eventos</title>
-    <link rel="stylesheet" href="css/styleeventos.css">
+    <link rel="stylesheet" href="css/stylevereventos.css">
 </head>
 
 <body>
@@ -14,35 +14,14 @@
         <div class="menu-options">
             <div class="menu-option">
                 <a href="menu.html">Menu</a>
-                <a href="form.html">Crear Eventos</a>
+                <a href="crearevento.html">Crear Eventos</a>
             </div>
         </div>
     </div>
 
-    <table class="events-table">
-        <tr>
-            <th>Fecha</th>
-            <th>Evento</th>
-            <th>Acciones</th>
-        </tr>
-        <tr>
-            <td>2023-07-27</td>
-            <td>Evento 1</td>
-            <td class="event-actions">
-                <a id="btn-edit" class="btn-edit" href="invitados.html">Editar</a>
-                <a class="btn-delete">Eliminar</a>
-            </td>
-        </tr>
-        <tr>
-            <td>2023-07-28</td>
-            <td>Evento 2</td>
-            <td class="event-actions">
-                <a id="btn-edit" class="btn-edit" href="invitados.html">Editar</a>
-                <a class="btn-delete">Eliminar</a>
-            </td>
-        </tr>
-        <!-- Agregar más filas de eventos aquí -->
-    </table>
+    <div id="tablaContainer"></div>
+
 </body>
+<script src="js/vereventos.js"></script>
 
 </html>
