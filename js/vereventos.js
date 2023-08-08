@@ -1,9 +1,18 @@
-// Supongamos que tienes datos de eventos almacenados en localStorage
+
+const boton = document.getElementById('btnSession');
+
+boton.onclick = function () {
+
+    localStorage.setItem("sessionActive", false)
+    window.location.href = 'login.html';
+
+}
+
 const eventos = JSON.parse(localStorage.getItem("eventos"));
 var nameLocal = localStorage.getItem('loggedIn');
 console.log(nameLocal);
 
-// Función para crear la tabla con eventos de un usuario específico
+
 function crearTablaEventosUsuario(nameLocal) {
     const tablaContainer = document.getElementById('tablaContainer');
     tablaContainer.innerHTML = ''; // Limpiamos el contenedor antes de crear la tabla
@@ -111,3 +120,7 @@ function crearTablaEventosUsuario(nameLocal) {
 
 // Ejemplo: Mostrar eventos para el usuario 'mayala'
 crearTablaEventosUsuario(nameLocal);
+
+
+
+

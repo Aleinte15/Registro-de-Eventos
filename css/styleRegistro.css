@@ -1,111 +1,89 @@
 /* Resetear estilos por defecto */
+*/* Reset de Estilos */
 * {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-  }
-  
-  body {
-    font-family: 'Roboto', sans-serif;
-    line-height: 1.6;
-    background-color: #f0f0f0;
-  }
-  
-  .register-container {
-    max-width: 400px;
-    margin: 50px auto;
-    padding: 30px;
-    background-color: #fff;
-    border-radius: 10px;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-  }
-  
-  h1 {
-    text-align: center;
-    margin-bottom: 20px;
-    color: #333;
-    font-size: 28px;
-  }
-  
-  .register-form {
-    display: flex;
-    flex-direction: column;
-  }
-  
-  label {
-    font-weight: bold;
-    margin-bottom: 8px;
-    color: #666;
-  }
-  
-  input[type="text"],
-  input[type="password"] {
-    padding: 12px;
-    border: 2px solid #ccc;
-    border-radius: 8px;
-    font-size: 16px;
-    transition: border-color 0.3s ease;
-  }
-  
-  input[type="text"]:focus,
-  input[type="password"]:focus {
-    border-color: #007bff;
-  }
-  
-  button {
-    padding: 12px;
-    background-color: #007bff;
-    color: #fff;
-    border: none;
-    border-radius: 8px;
-    cursor: pointer;
-    font-size: 18px;
-    transition: background-color 0.3s ease, transform 0.2s ease;
-    margin-top: 20px;
-  }
-  
-  button:hover {
-    background-color: #0056b3;
-    transform: translateY(-3px);
-  }
-  
-  /* Estilo para el enlace de registro */
-  a {
-    color: #007bff;
-    text-decoration: none;
-    display: block;
-    text-align: center;
-    margin-top: 20px;
-  }
-  
-  a:hover {
-    text-decoration: underline;
-  }
-  
-  /* Estilo para el formulario */
-  .register-form {
-    background-color: #f9f9f9;
-    padding: 20px;
-    border-radius: 10px;
-  }
-  
-  /* Estilo para los campos de entrada */
-  input[type="text"],
-  input[type="password"] {
-    margin-bottom: 15px;
-  }
-  
-  /* Estilo para el botón de registro */
-  button {
-    margin-top: 30px;
-  }
-  
-  /* Estilo para el fondo */
-  body {
-    background-image: url('ruta_de_tu_imagen.jpg');
-    background-size: cover;
-    background-position: center;
-  }
-  
-  
-  
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* Estilos Generales */
+body {
+  font-family: 'Arial', sans-serif;
+  line-height: 1.6;
+  background: rgb(249,247,247);
+  background: radial-gradient(circle, rgba(249,247,247,1) 0%, rgba(95,95,95,1) 100%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  margin: 0;
+}
+
+.register-container {
+  max-width: 800px;
+  padding: 30px;
+  background-color: #787676;
+  border-radius: 10px;
+  box-shadow: 0 0 20px rgba(238, 11, 11, 0.1);
+}
+
+h1 {
+  text-align: center;
+  margin-bottom: 20px;
+  color: #333;
+  font-size: 28px;
+}
+
+.register-form {
+  display: flex;
+  flex-direction: column;
+}
+
+label {
+  font-weight: bold;
+  margin-bottom: 8px;
+  color: #050505;
+}
+
+input[type="text"],
+input[type="password"] {
+  padding: 10px;
+  border: 2px solid #6691a2;
+  border-radius: 4px;
+  font-size: 16px;
+  transition: border-color 0.5s ease;
+  margin-bottom: 20px;
+}
+
+input[type="text"]:focus,
+input[type="password"]:focus {
+  border-color: #007bff;
+}
+
+button {
+  padding: 10px;
+  background-color: #044a4b;
+  color: #080808;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  margin-top: 20px;
+}
+
+button:hover {
+  background-color: #ecf2f2;
+  transform: translateY(-2px);
+}
+
+a {
+  color: #caa11a;
+  text-decoration: none;
+  text-align: center;
+  margin-top: 15px;
+}
+
+a:hover {
+  text-decoration: underline;
+}

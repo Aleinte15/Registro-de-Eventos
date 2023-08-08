@@ -1,3 +1,13 @@
+
+const boton = document.getElementById('btnSession');
+
+boton.onclick = function () {
+
+    localStorage.setItem("sessionActive", false)
+    window.location.href = 'login.html';
+
+}
+
 function guardarRegistro() {
     const nombreResponsable = document.getElementById("nombreResponsable").value;
     const contraseñaResponsable = document.getElementById("contraseñaResponsable").value;
@@ -7,8 +17,7 @@ function guardarRegistro() {
     const cantidadInvitados = document.getElementById("cantidadInvitados").value;
 
     if (validarFormulario()) {
-        // Aquí puedes realizar las acciones necesarias con los datos ingresados, por ejemplo, enviarlos a un servidor.
-        // En este caso, simplemente mostraremos una alerta con los datos ingresados.
+       
         alert(
             `Datos guardados:\n\nNombre del responsable: ${nombreResponsable}\nContraseña del responsable: ${contraseñaResponsable}\nCorreo del responsable: ${correoResponsable}\nNombre del evento: ${nombreEvento}\nFecha del evento: ${fechaEvento}\nCantidad de invitados: ${cantidadInvitados}`
         );

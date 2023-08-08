@@ -1,8 +1,17 @@
+
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    background: rgb(249,247,247);
+background: radial-gradient(circle, rgba(249,247,247,1) 0%, rgba(95,95,95,1) 100%);
+  }
+
+
 .menu {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background-color: #007bff;
+    background-color: #3a3a3b;
     padding: 10px 30px;
     color: #fff;
 }
@@ -17,34 +26,34 @@
 }
 
 .menu-option a {
-    color: #fff;
+    color: #f9f6f6;
     text-decoration: none;
     font-size: 18px;
     padding: 10px 20px;
     border-radius: 10px;
-    background-color: #0056b3;
+    background-color: #6d6e6e;
 }
 
 .menu-option a:hover {
-    background-color: #00509b;
+    background-color: #0edadd;
 }
 
 .menu-logout a {
-    color: #fff;
+    color: #f5f3f3;
     text-decoration: none;
     font-size: 18px;
     padding: 10px 20px;
     border-radius: 10px;
-    background-color: #dc3545;
+    background-color: #fa0404;
 }
 
 .menu-logout a:hover {
-    background-color: #c82333;
+    background-color: #0edadd;
 }
 
 
 .login-container {
-    background-color: #fff;
+    background-color: #6d6e6e;
     padding: 20px;
     border-radius: 5px;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
@@ -71,7 +80,8 @@ h1 {
 .login-form button {
     width: 100%;
     padding: 10px;
-    background-color: #007bff;
+    background-color: #044a4b;
+    ;
     color: #fff;
     font-size: 16px;
     border: none;
@@ -80,5 +90,6 @@ h1 {
 }
 
 .login-form button:hover {
-    background-color: #0056b3;
+    background-color: #4fc2c6;
+
 }

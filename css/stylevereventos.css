@@ -2,42 +2,62 @@ body {
   margin: 0;
   padding: 0;
   font-family: Arial, sans-serif;
-  background-color: #f5f5f5;
+  background: rgb(249,247,247);
+background: radial-gradient(circle, rgba(249,247,247,1) 0%, rgba(95,95,95,1) 100%);
 }
 
+
 .menu {
-  background-color: #3360b4;
-  padding: 20px;
   display: flex;
   justify-content: space-between;
   align-items: center;
-}
-
-.menu-title {
-  color: #fff;
-  font-size: 24px;
+  background-color: #090909;
+  padding: 10px 30px;
+  color: #bc0000;
 }
 
 .menu-options {
   display: flex;
+  align-items: center;
 }
 
 .menu-option {
-  margin-left: 15px;
+  margin-right: 20px;
 }
 
 .menu-option a {
+  color: #faf6f6;
   text-decoration: none;
-  color: #fff;
-  padding: 10px 15px;
-  border-radius: 5px;
-  transition: background-color 0.3s ease;
+  font-size: 18px;
+  padding: 10px 20px;
+  border-radius: 10px;
+  background-color: #636464;
 }
 
 .menu-option a:hover {
-  background-color: #555;
+  background-color: #636464;
 }
 
+.menu-logout a {
+  color: #f4eeee;
+  text-decoration: none;
+  font-size: 18px;
+  padding: 10px 20px;
+  border-radius: 10px;
+  background-color: #f70404;
+}
+
+.menu-logout a:hover {
+  background-color: #0c0c0c;
+}
+
+#name {
+  text-align: right;
+  padding-right: 30px;
+  font-size: 18px;
+  color: #f3f0f0;
+  margin-top: 10px;
+}
 
 
 /* Estilos para la tabla */
@@ -49,18 +69,18 @@ body {
 table {
   border-collapse: collapse;
   width: 100%;
-  border: 1px solid #ccc;
+  border: 1px solid #0d0d0d;
 }
 
 th,
 td {
   padding: 10px;
   text-align: left;
-  border-bottom: 1px solid #ddd;
+  border-bottom: 1px solid #050505;
 }
 
 th {
-  background-color: #f2f2f2;
+  background-color: #6e6d6d;
 }
 
 /* Estilos para los botones */

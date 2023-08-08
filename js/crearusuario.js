@@ -6,37 +6,44 @@ function register(event) {
     const name = document.getElementById('name').value;
     const confirmPassword = document.getElementById('confirm-password').value;
 
-    // Validamos que las contraseñas coincidan
+
     if (password !== confirmPassword) {
         alert('Las contraseñas no coinciden. Por favor, inténtalo de nuevo.');
         return;
-    } 
-    if (name == null && name == ""){
-        alert ('El nombre no puede quedar vacio');
+    }
+    if (name == null && name == "") {
+        alert('El nombre no puede quedar vacio');
 
     }
-
-    // Aquí podrías realizar más validaciones adicionales si es necesario
-
-    // Guardamos la información del nuevo usuario (puedes usar localStorage o cualquier otro medio)
     const newUser = {
         username: username,
         password: password,
         name: name,
         autentificado: true
 
-        
+
     };
     saveUser(newUser);
-
-    // Redirigimos a la página de inicio de sesión después del registro exitoso
-    window.location.href = 'login.html';
 }
 
 function saveUser(user) {
-    // En este ejemplo, simplemente almacenamos el objeto de usuario en localStorage.
-    // En una aplicación real, esto podría requerir una lógica de backend para guardar la información en un servidor de base de datos.
+
+    var encontrado = findUser(user.username);
+    if (encontrado) {
+        alert("Ya existe un usuario con ese User name");
+    } else {
+        const users = JSON.parse(localStorage.getItem('users')) || [];
+        users.push(user);
+        localStorage.setItem('users', JSON.stringify(users));
+        window.location.href = 'login.html';
+    }
+}
+
+
+function findUser(username) {
     const users = JSON.parse(localStorage.getItem('users')) || [];
-    users.push(user);
-    localStorage.setItem('users', JSON.stringify(users));
+
+    const foundUser = users.find(user => user.username === username);
+
+    return foundUser;
 }

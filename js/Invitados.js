@@ -1,3 +1,15 @@
+
+
+const boton = document.getElementById('btnSession');
+
+boton.onclick = function () {
+
+    localStorage.setItem("sessionActive", false)
+    window.location.href = 'login.html';
+
+}
+
+
 document.addEventListener("DOMContentLoaded", function () {
     // Obtener el elemento input
     var sessionActive = localStorage.getItem('sessionActive');
@@ -51,12 +63,10 @@ function saveUser(invitado) {
 
 var eventoAgregarInvitado = JSON.parse(localStorage.getItem('eventoEditado'));
 var idEvento = eventoAgregarInvitado.id;
-// Función para crear la tabla con eventos de un evento en específico
 function crearTablaEventosInvitados(idEvento) {
     var invitados = JSON.parse(localStorage.getItem("invitados"));
     const tablaContainer = document.getElementById('tablaContainer');
-    tablaContainer.innerHTML = ''; // Limpiamos el contenedor antes de crear la tabla
-
+    tablaContainer.innerHTML = '';
     var invitadosUsuario = invitados.filter(invitado => invitado.idEvento == idEvento);
 
     if (invitadosUsuario.length === 0) {
@@ -149,5 +159,12 @@ function crearTablaEventosInvitados(idEvento) {
 
 // Ejemplo: Mostrar eventos para el usuario 'mayala'
 crearTablaEventosInvitados(idEvento);
+
+
+
+
+
+
+
 
 
