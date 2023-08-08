@@ -29,9 +29,7 @@ function crearTablaEventosUsuario(nameLocal) {
     // Crea la fila de encabezado
     const encabezadoRow = document.createElement('tr');
     for (const key in eventosUsuario[0]) {
-        if (key === 'contraseña') {
-            continue; // Salta esta iteración del bucle y pasa a la siguiente columna
-        }
+
 
         const th = document.createElement('th');
         th.textContent = key;
@@ -71,9 +69,26 @@ function crearTablaEventosUsuario(nameLocal) {
 
     // Función para manejar el clic en el botón "Eliminar"
     function handleEliminarClick(evento, fila) {
-        // Implementa la lógica para eliminar el evento aquí
-        console.log('Eliminar evento:', evento);
-        fila.remove(); // Elimina la fila de la tabla
+
+
+        const storedData = JSON.parse(localStorage.getItem('eventos'));
+
+        if (storedData) {
+            
+            const updatedData = storedData.filter(item => item.id !== evento.id);
+
+            localStorage.setItem('eventos', JSON.stringify(updatedData));
+            const invitadosData = JSON.parse(localStorage.getItem('invitados'));
+            if (invitadosData){
+                const updatedInvitados = invitadosData.filter(item => item.id !== evento.id);
+                localStorage.setItem('invitados', JSON.stringify(updatedInvitados));
+            }
+
+            alert('Objeto eliminado exitosamente.');
+        } else {
+            console.log('No se encontraron datos en el Local Storage.');
+        }
+        fila.remove(); 
     }
 
     // Crea las filas de datos
@@ -82,9 +97,6 @@ function crearTablaEventosUsuario(nameLocal) {
 
         for (const key in evento) {
 
-            if (key === 'contraseña') {
-                continue; // Salta esta iteración del bucle y pasa a la siguiente columna
-            }
             const td = document.createElement('td');
             td.textContent = evento[key];
             fila.appendChild(td);
@@ -118,7 +130,6 @@ function crearTablaEventosUsuario(nameLocal) {
     tablaContainer.appendChild(tabla);
 }
 
-// Ejemplo: Mostrar eventos para el usuario 'mayala'
 crearTablaEventosUsuario(nameLocal);
 
 

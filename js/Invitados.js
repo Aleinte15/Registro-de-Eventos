@@ -31,8 +31,17 @@ function register(event) {
     const persona = document.getElementById('persona').value;
     const cantidadInvitados = document.getElementById('cantidad').value;
     const observaciones = document.getElementById('observaciones').value;
+    var idInvitado = localStorage.getItem("idInvitado");
+    if (idInvitado) {
+        idInvitado = parseInt(idInvitado) + 1;
+        localStorage.setItem("idInvitado", idInvitado);
 
+    } else {
+        idInvitado = 1;
+        localStorage.setItem("idInvitado", idInvitado);
+    }
     const newInvitado = {
+        id: idInvitado,
         idEvento: eventoAgregarInvitados.id,
         persona: persona,
         cantidadInvitados: cantidadInvitados,
@@ -104,12 +113,30 @@ function crearTablaEventosInvitados(idEvento) {
 
     // Función para manejar el clic en el botón "Editar"
     function handleEditarClick(evento) {
-
+        var persona = document.getElementById('persona');
+        var cantidad = document.getElementById('cantidad');
+        var observaciones = document.getElementById('observaciones');
+        persona.textContent = evento.persona;
+        cantidad.textContent = evento.cantidadInvitados;
+        
+        observaciones.textContent = evento.observaciones;
+    
 
     }
 
     // Función para manejar el clic en el botón "Eliminar"
     function handleEliminarClick(evento, fila) {
+        
+
+        const invitadosData = JSON.parse(localStorage.getItem('invitados'));
+        if (invitadosData) {
+            const updatedInvitados = invitadosData.filter(item => item.id !== evento.id);
+            localStorage.setItem('invitados', JSON.stringify(updatedInvitados));
+        }
+
+        alert('Objeto eliminado exitosamente.');
+
+        fila.remove();
         // Implementa la lógica para eliminar el evento aquí
         console.log('Eliminar evento:', evento);
         fila.remove(); // Elimina la fila de la tabla

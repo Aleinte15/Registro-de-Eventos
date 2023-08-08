@@ -19,11 +19,34 @@ body {
   padding: 10px 30px;
   color: #fff;
 }
-
 .menu-options {
   display: flex;
-  align-items: center;
+  justify-content: center;
+  margin-top:   20%;
 }
+
+.menu-option {
+  display: inline-block;
+}
+
+.menu-option:first-child {
+  margin-right: 10px;
+}
+
+.menu-option {
+  margin-right: 20px;
+}
+
+.menu-option a {
+  color: #0c0c0c;
+  text-decoration: none;
+  font-size: 18px;
+  padding: 50px 70px;
+  border-radius: 10px;
+  background-color: #0056b3;
+}
+
+
 
 .menu-option {
   margin-right: 20px;

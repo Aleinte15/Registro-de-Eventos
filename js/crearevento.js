@@ -1,8 +1,6 @@
 function crearEvento(event) {
     event.preventDefault();
     const nombreResponsable = document.getElementById("nombre").value;
-    const contraseñaResponsable = document.getElementById("contraseña").value;
-    const correoResponsable = document.getElementById("correo").value;
     const nombreEvento = document.getElementById("nombreEvento").value;
     const fechaEvento = document.getElementById("fechaEvento").value;
     const cantidadInvitados = document.getElementById("cantidadInvitados").value;
@@ -20,8 +18,6 @@ function crearEvento(event) {
     const nuevoEvento = {
         id: idEvento,
         nombre: nombreResponsable,
-        contraseña: contraseñaResponsable,
-        correo: correoResponsable,
         nombreEvento: nombreEvento,
         fechaEvento: fechaEvento,
         cantidadInvitados: cantidadInvitados,
