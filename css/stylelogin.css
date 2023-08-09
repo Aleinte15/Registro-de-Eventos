@@ -40,7 +40,7 @@ background: radial-gradient(circle, rgba(249,247,247,1) 0%, rgba(95,95,95,1) 100
   input[type="text"],
   input[type="password"] {
     padding: 10px;
-    border: 1px solid #ccc;
+    border: 1px solid #0b0b0b;
     border-radius: 4px;
     font-size: 16px;
     margin-bottom: 15px;
@@ -67,7 +67,7 @@ background: radial-gradient(circle, rgba(249,247,247,1) 0%, rgba(95,95,95,1) 100
   }
   
   a {
-    color: #f2f4f7;
+    color: #fbf7f7;
     text-decoration: none;
   }
   

@@ -30,8 +30,18 @@ function crearEvento(event) {
 
 }
 
+const boton = document.getElementById('btnSession');
+boton.onclick = function () {
+
+    localStorage.setItem("sessionActive", false)
+    window.location.href = 'login.html';
+
+}
+
 
 function saveEvento(evento) {
+    const eventoJSON = JSON.stringify(evento);
+    localStorage.setItem("eventoEditado", eventoJSON);
     const eventos = JSON.parse(localStorage.getItem('eventos')) || [];
     eventos.push(evento);
     localStorage.setItem('eventos', JSON.stringify(eventos));

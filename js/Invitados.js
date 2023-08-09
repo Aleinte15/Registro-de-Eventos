@@ -48,26 +48,12 @@ function register(event) {
         observaciones: observaciones,
         confirmado: false
     };
-    saveUser(newInvitado);
+    saveInvitado(newInvitado);
     crearTablaEventosInvitados(idEvento);
     alert("Invitado agregado")
 
 
 }
-
-function saveUser(invitado) {
-    const invitados = JSON.parse(localStorage.getItem('invitados')) || [];
-    invitados.push(invitado);
-    localStorage.setItem('invitados', JSON.stringify(invitados));
-
-}
-
-
-
-
-
-
-
 
 
 var eventoAgregarInvitado = JSON.parse(localStorage.getItem('eventoEditado'));
@@ -108,38 +94,46 @@ function crearTablaEventosInvitados(idEvento) {
 
 
     }
-    encabezadoRow.innerHTML += '<th>Editar</th><th>Eliminar</th>'; // Agrega encabezados para los botones
+    encabezadoRow.innerHTML += '<th>Editar</th><th>Eliminar</th><th>Acciones</th>'; // Agrega encabezados para los botones
     tabla.appendChild(encabezadoRow);
 
     // Función para manejar el clic en el botón "Editar"
     function handleEditarClick(evento) {
-        var persona = document.getElementById('persona');
-        var cantidad = document.getElementById('cantidad');
-        var observaciones = document.getElementById('observaciones');
-        persona.textContent = evento.persona;
-        cantidad.textContent = evento.cantidadInvitados;
-        
-        observaciones.textContent = evento.observaciones;
-    
+        const persona = document.getElementById('persona').value;
+        const cantidadInvitados = document.getElementById('cantidad').value;
+        const observaciones = document.getElementById('observaciones').value;
+        if (persona == "" || cantidadInvitados == "" || observaciones == "") {
+            alert("Por favor ingrese todos los campos");
+        } else {
+            eliminarInvitado(evento);
+            evento.persona = persona;
+            evento.cantidadInvitados = cantidadInvitados;
+            evento.observaciones = observaciones;
+            saveInvitado(evento);
+            document.getElementById('persona').value = "";
+            document.getElementById('cantidad').value = "";
+            document.getElementById('observaciones').value = "";
+            crearTablaEventosInvitados(idEvento);
+            alert('Editado exitosamente.')
+        }
 
     }
 
     // Función para manejar el clic en el botón "Eliminar"
     function handleEliminarClick(evento, fila) {
-        
-
-        const invitadosData = JSON.parse(localStorage.getItem('invitados'));
-        if (invitadosData) {
-            const updatedInvitados = invitadosData.filter(item => item.id !== evento.id);
-            localStorage.setItem('invitados', JSON.stringify(updatedInvitados));
-        }
-
-        alert('Objeto eliminado exitosamente.');
-
+        eliminarInvitado(evento);
+        alert('Eliminado exitosamente.');
         fila.remove();
-        // Implementa la lógica para eliminar el evento aquí
-        console.log('Eliminar evento:', evento);
-        fila.remove(); // Elimina la fila de la tabla
+    }
+
+    function handleAccionesClick(evento, fila) {
+        const invitado = findInvitado(evento.id);
+        invitado.confirmado = !invitado.confirmado;
+        eliminarInvitado(evento);
+        saveInvitado(invitado);
+        crearTablaEventosInvitados(idEvento);
+
+
     }
 
     // Crea las filas de datos
@@ -147,15 +141,24 @@ function crearTablaEventosInvitados(idEvento) {
         const fila = document.createElement('tr');
 
         for (const key in evento) {
-
-            if (key === 'contraseña') {
-                continue; // Salta esta iteración del bucle y pasa a la siguiente columna
-            }
             const td = document.createElement('td');
-            td.textContent = evento[key];
-            fila.appendChild(td);
 
+            if (key === "confirmado") {
+                if (evento[key] == true) {
+                    td.textContent = '✓'; // Símbolo de checkmark para confirmado falso
+                    td.className = "check-verde";
+                } else {
+                    td.textContent = 'X'; // Símbolo de checkmark para confirmado verdadero
+                    td.className = "check-rojo";
+                }
+            } else {
+                td.textContent = evento[key];
+            }
+
+            fila.appendChild(td);
         }
+
+
 
         // Crea los botones para editar y eliminar
         const botonEditar = document.createElement('button');
@@ -163,10 +166,23 @@ function crearTablaEventosInvitados(idEvento) {
         botonEditar.textContent = 'Editar';
         botonEditar.addEventListener('click', () => handleEditarClick(evento));
 
+
         const botonEliminar = document.createElement('button');
         botonEliminar.textContent = 'Eliminar';
         botonEliminar.className = 'boton-eliminar';
         botonEliminar.addEventListener('click', () => handleEliminarClick(evento, fila)); // Pasamos la fila para eliminarla
+
+        const botonConfirmar = document.createElement('button');
+        if (evento.confirmado == false) {
+            botonConfirmar.textContent = 'Confirmar';
+        } else {
+            botonConfirmar.textContent = 'Desconfirmar';
+        }
+
+
+        botonConfirmar.className = 'boton-confirmar';
+        botonConfirmar.addEventListener('click', () => handleAccionesClick(evento, fila)); // Pasamos la fila para eliminarla
+
 
         // Agrega los botones a la fila
         const tdEditar = document.createElement('td');
@@ -176,6 +192,10 @@ function crearTablaEventosInvitados(idEvento) {
         const tdEliminar = document.createElement('td');
         tdEliminar.appendChild(botonEliminar);
         fila.appendChild(tdEliminar);
+
+        const tdConfirmar = document.createElement('td');
+        tdConfirmar.appendChild(botonConfirmar);
+        fila.appendChild(tdConfirmar);
 
         // Agrega la fila a la tabla
         tabla.appendChild(fila);
@@ -187,6 +207,28 @@ function crearTablaEventosInvitados(idEvento) {
 // Ejemplo: Mostrar eventos para el usuario 'mayala'
 crearTablaEventosInvitados(idEvento);
 
+
+
+function findInvitado(idInvitado) {
+    const invitados = JSON.parse(localStorage.getItem('invitados')) || [];
+    const foundInvitado = invitados.find(invitados => invitados.id === idInvitado);
+    return foundInvitado;
+}
+
+function eliminarInvitado(invitado) {
+    const invitadosData = JSON.parse(localStorage.getItem('invitados'));
+    if (invitadosData) {
+        const updatedInvitados = invitadosData.filter(item => item.id !== invitado.id);
+        localStorage.setItem('invitados', JSON.stringify(updatedInvitados));
+    }
+}
+
+
+function saveInvitado(invitado) {
+    const invitados = JSON.parse(localStorage.getItem('invitados')) || [];
+    invitados.push(invitado);
+    localStorage.setItem('invitados', JSON.stringify(invitados));
+}
 
 
 

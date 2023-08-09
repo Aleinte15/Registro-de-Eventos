@@ -15,8 +15,6 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
 const boton = document.getElementById('btnSession');
-
-// Agregamos un evento onclick al botón
 boton.onclick = function () {
 
     localStorage.setItem("sessionActive", false)

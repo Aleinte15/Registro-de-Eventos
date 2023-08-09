@@ -56,13 +56,8 @@ function crearTablaEventosUsuario(nameLocal) {
 
     // Función para manejar el clic en el botón "Editar"
     function handleEditarClick(evento) {
-        // Convierte el evento a JSON
         const eventoJSON = JSON.stringify(evento);
-
-        // Almacena el evento JSON en el localStorage
         localStorage.setItem("eventoEditado", eventoJSON);
-
-        // Redirige a la página 'invitados.html'
         window.location.href = 'invitados.html';
 
     }

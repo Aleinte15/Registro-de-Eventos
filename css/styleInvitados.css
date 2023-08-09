@@ -1,10 +1,9 @@
-
 body {
     font-family: Arial, sans-serif;
     line-height: 1.6;
-    background: rgb(249,247,247);
-background: radial-gradient(circle, rgba(249,247,247,1) 0%, rgba(95,95,95,1) 100%);
-  }
+    background: rgb(249, 247, 247);
+    background: radial-gradient(circle, rgba(249, 247, 247, 1) 0%, rgba(95, 95, 95, 1) 100%);
+}
 
 
 
@@ -133,84 +132,78 @@ h1 {
 
 
 
+/* Estilos para la tabla */
+#tablaContainer {
+    margin: 20px;
+    font-family: Arial, sans-serif;
+}
 
-
-
-.events-table {
-    margin: 30px 3px 0px 0px;
+table {
     border-collapse: collapse;
-    width: 97%;
-    background-color: #fff;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    border: 1px solid #0d0d0d;
 }
 
-.events-table th,
-.events-table td {
-    padding: 12px 15px;
+th,
+td {
+    padding: 10px;
     text-align: left;
+    border-bottom: 1px solid #050505;
 }
 
-.events-table th {
-    background-color: #1ece36;
-    color: #fff;
+th {
+    background-color: #6e6d6d;
 }
 
-.events-table tr:nth-child(even) {
-    background-color: #f2f2f2;
-}
-
-.events-table tr:hover {
-    background-color: #e0e0e0;
-}
-
-.event-actions {
-    display: flex;
-}
-
-.event-actions button {
-    margin-right: 5px;
+/* Estilos para los botones */
+.boton-editar,
+.boton-eliminar {
     padding: 5px 10px;
+    margin-right: 5px;
     border: none;
-    border-radius: 5px;
     cursor: pointer;
-    transition: background-color 0.3s ease;
+    border-radius: 4px;
 }
 
-.event-actions button:hover {
-    background-color: #555;
+.boton-editar {
+    background-color: #007bff !important;
+    color: #fff;
+    ;
+}
+
+.boton-eliminar {
+    background-color: #dc3545 !important;
     color: #fff;
 }
 
-
-.btn-delete {
-    background-color: #d31e1e;
-    color: #fff;
-    padding: 10px 15px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
+.boton-confirmar {
+    width: 100%;
 }
 
-.btn-delete:hover {
-    background-color: #ff3333;
+button:hover {
+    opacity: 0.8;
 }
 
-/* Estilo del botón Editar */
-.btn-edit {
-    background-color: #3360b4;
-    color: #fff;
-    padding: 10px 15px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
+
+
+/* Estilo para el icono de check en color verde */
+
+/* Estilo para el símbolo de checkmark en color verde */
+.check-verde {
+    text-align: center;
+    /* Centrar el contenido */
+    font-size: 18px;
+    /* Tamaño del símbolo */
+    color: rgb(236, 245, 236);
+    /* Color del símbolo verde */
 }
 
-.btn-edit:hover {
-    background-color: #3d7ee5;
-}
-
-#btn-edit {
-    text-decoration: none;
+/* Estilo para el símbolo de checkmark en color rojo */
+.check-rojo {
+    text-align: center;
+    /* Centrar el contenido */
+    font-size: 18px;
+    /* Tamaño del símbolo */
+    color: red;
+    /* Color del símbolo rojo */
 }

@@ -80,7 +80,7 @@ body {
     color: white;
     font-weight: bold;
     padding: 20px;
-    border: 1px solid #ccc;
+    border: 1px solid #050505;
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     width: 400px;
@@ -112,7 +112,7 @@ h1 {
 .login-form button {
     width: 100%;
     padding: 10px;
-    background-color: #044a4b;
+    background-color: #090909;
     ;
     color: #fff;
     font-size: 16px;

@@ -8,7 +8,7 @@ body {
   font-family: 'Roboto', sans-serif;
   line-height: 1.6;
   background: rgb(201, 199, 200);
-  background: radial-gradient(circle, rgba(201, 199, 200, 1) 0%, rgb(94, 95, 96) 100%);
+  background: radial-gradient(circle, rgba(201, 199, 200, 1) 0%, rgba(95,95,95,1) 100%);
 }
 
 .menu {
@@ -53,16 +53,16 @@ body {
 }
 
 .menu-option a {
-  color: #0c0c0c;
+  color: #fdfbfb;
   text-decoration: none;
   font-size: 18px;
   padding: 50px 70px;
   border-radius: 10px;
-  background-color: #0056b3;
+  background-color: #050505;
 }
 
 .menu-option a:hover {
-  background-color: #e2e9ee;
+  background-color: #3b3a3a;
 }
 
 .menu-logout a {
@@ -131,6 +131,8 @@ body {
 .button:focus {
   outline: none;
 }
+
+
 
 
 
