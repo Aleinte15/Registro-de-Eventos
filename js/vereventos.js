@@ -17,7 +17,10 @@ function crearTablaEventosUsuario(nameLocal) {
     const tablaContainer = document.getElementById('tablaContainer');
     tablaContainer.innerHTML = ''; // Limpiamos el contenedor antes de crear la tabla
 
-    const eventosUsuario = eventos.filter(evento => evento.user === nameLocal);
+    const eventosUsuario = new Array();
+    if (eventos !== null) {
+        eventosUsuario = eventos.filter(evento => evento.user === nameLocal);
+    }
 
     if (eventosUsuario.length === 0) {
         tablaContainer.textContent = 'No hay eventos para este usuario.';

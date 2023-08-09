@@ -63,7 +63,10 @@ function crearTablaEventosInvitados(idEvento) {
     var invitados = JSON.parse(localStorage.getItem("invitados"));
     const tablaContainer = document.getElementById('tablaContainer');
     tablaContainer.innerHTML = '';
-    var invitadosUsuario = invitados.filter(invitado => invitado.idEvento == idEvento);
+    const invitadosUsuario = new Array();
+    if (invitados !== null) {
+        invitadosUsuario = invitados.filter(invitado => invitado.idEvento == idEvento);
+    }
 
     if (invitadosUsuario.length === 0) {
         tablaContainer.textContent = 'Aun no tienes invitados para este evento.';
