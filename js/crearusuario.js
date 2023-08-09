@@ -25,21 +25,23 @@ function register(event) {
     };
     saveUser(newUser);
 }
-
+// Esta función guarda un nuevo usuario en el almacenamiento local.
 function saveUser(user) {
 
     var encontrado = findUser(user.username);
     if (encontrado) {
         alert("Ya existe un usuario con ese User name");
     } else {
+        // Esta función guarda un nuevo usuario en el almacenamiento local.
         const users = JSON.parse(localStorage.getItem('users')) || [];
         users.push(user);
+        // Almacena la lista actualizada de usuarios en el almacenamiento local.
         localStorage.setItem('users', JSON.stringify(users));
         window.location.href = 'login.html';
     }
 }
 
-
+// Esta función busca un usuario en la lista de usuarios por su nombre de usuario.
 function findUser(username) {
     const users = JSON.parse(localStorage.getItem('users')) || [];
 

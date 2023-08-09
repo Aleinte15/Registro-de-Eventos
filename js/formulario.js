@@ -1,4 +1,4 @@
-
+// Obtener el elemento del botón con el ID 'btnSession'.
 const boton = document.getElementById('btnSession');
 
 boton.onclick = function () {
@@ -16,6 +16,7 @@ function guardarRegistro() {
     const fechaEvento = document.getElementById("fechaEvento").value;
     const cantidadInvitados = document.getElementById("cantidadInvitados").value;
 
+    // Si el formulario es válido según la función de validación, muestra una alerta con los datos recopilados.
     if (validarFormulario()) {
        
         alert(
@@ -32,11 +33,15 @@ function validarFormulario() {
     for (const input of form.elements) {
         if (input.tagName === "INPUT" && input.required && input.value.trim() === "") {
             isValid = false;
+             // Agregar la clase "error" para resaltar campos no válidos.
             input.classList.add("error");
         } else {
+             // Si el campo es válido, remover la clase "error".
             input.classList.remove("error");
         }
     }
 
+
+ // Devolver true si todos los campos requeridos están llenos, de lo contrario, devolver false.
     return isValid;
 }

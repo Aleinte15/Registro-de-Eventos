@@ -5,7 +5,10 @@ function crearEvento(event) {
     const fechaEvento = document.getElementById("fechaEvento").value;
     const cantidadInvitados = document.getElementById("cantidadInvitados").value;
 
+
+     // Obtiene el valor de "idEvento" del almacenamiento local.
     var idEvento = localStorage.getItem("idEvento");
+      // Si "idEvento" existe, incrementa su valor en 1 y actualiza el almacenamiento local.
     if (idEvento) {
         idEvento = parseInt(idEvento) + 1;
         localStorage.setItem("idEvento", idEvento);
@@ -14,7 +17,9 @@ function crearEvento(event) {
         idEvento = 1;
         localStorage.setItem("idEvento", idEvento);
     }
+     // Obtiene el nombre de usuario almacenado en el almacenamiento local.
     var nameLocal = localStorage.getItem('loggedIn');
+     // Crea un objeto "nuevoEvento" con la información recopilada.
     const nuevoEvento = {
         id: idEvento,
         nombre: nombreResponsable,
@@ -29,10 +34,12 @@ function crearEvento(event) {
 
 
 }
-
+// Este código asigna una función al evento de clic en el botón de sesión.
 const boton = document.getElementById('btnSession');
 boton.onclick = function () {
 
+
+    // Establece la clave "sessionActive" en el almacenamiento local como "false".
     localStorage.setItem("sessionActive", false)
     window.location.href = 'login.html';
 
@@ -40,11 +47,14 @@ boton.onclick = function () {
 
 
 function saveEvento(evento) {
+      // Convierte el objeto evento a una cadena JSON y lo almacena con la clave "eventoEditado".
     const eventoJSON = JSON.stringify(evento);
     localStorage.setItem("eventoEditado", eventoJSON);
+        // Obtiene la lista de eventos del almacenamiento local o crea una nueva lista vacía.
     const eventos = JSON.parse(localStorage.getItem('eventos')) || [];
     eventos.push(evento);
     localStorage.setItem('eventos', JSON.stringify(eventos));
     alert("Evento creado")
+     // Redirige la página actual a 'invitados.html' después de realizar la acción.
     window.location.href = 'invitados.html';
 }
