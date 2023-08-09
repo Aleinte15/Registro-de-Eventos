@@ -49,6 +49,7 @@ function register(event) {
         confirmado: false
     };
     saveInvitado(newInvitado);
+    limpiarCampos();
     crearTablaEventosInvitados(idEvento);
     alert("Invitado agregado")
 
@@ -110,9 +111,7 @@ function crearTablaEventosInvitados(idEvento) {
             evento.cantidadInvitados = cantidadInvitados;
             evento.observaciones = observaciones;
             saveInvitado(evento);
-            document.getElementById('persona').value = "";
-            document.getElementById('cantidad').value = "";
-            document.getElementById('observaciones').value = "";
+            limpiarCampos();
             crearTablaEventosInvitados(idEvento);
             alert('Editado exitosamente.')
         }
@@ -228,6 +227,13 @@ function saveInvitado(invitado) {
     const invitados = JSON.parse(localStorage.getItem('invitados')) || [];
     invitados.push(invitado);
     localStorage.setItem('invitados', JSON.stringify(invitados));
+}
+
+
+function limpiarCampos() {
+    document.getElementById('persona').value = "";
+    document.getElementById('cantidad').value = "";
+    document.getElementById('observaciones').value = "";
 }
 
 

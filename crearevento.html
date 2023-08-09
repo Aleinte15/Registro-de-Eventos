@@ -18,27 +18,30 @@
             <div class="menu-option">
                 <a href="eventos.html">Entrar a un Evento</a>
             </div>
+            <div class="menu-option">
+                <a href="menu.html">Menu</a>
+            </div>
         </div>
         <div class="menu-logout">
             <a id="btnSession">Cerrar Sesión</a>
         </div>
     </div>
     <div class="container">
-    <div class="login-container">
-        <h1>Registro de evento</h1>
-        <form class="login-form" onsubmit="crearEvento(event)">
-            <label for="persona">Nombre el responsable:</label>
-            <input type="nombre" id="nombre" required>
-            <label for="evento">Nombre del evento:</label>
-            <input type="evento" id="nombreEvento" required>
-            <label for="fecha">Fecha del evento:</label>
-            <input type="date" id="fechaEvento" required>
-            <label for="cantidad">Cantidad de invitados:</label>
-            <input type="number" id="cantidadInvitados" required>
-            <button type="submit">Guardar</button>
-        </form>
+        <div class="login-container">
+            <h1>Registro de evento</h1>
+            <form class="login-form" onsubmit="crearEvento(event)">
+                <label for="persona">Nombre el responsable:</label>
+                <input type="nombre" id="nombre" required>
+                <label for="evento">Nombre del evento:</label>
+                <input type="evento" id="nombreEvento" required>
+                <label for="fecha">Fecha del evento:</label>
+                <input type="date" id="fechaEvento" required>
+                <label for="cantidad">Cantidad de invitados:</label>
+                <input type="number" id="cantidadInvitados" required>
+                <button type="submit">Guardar</button>
+            </form>
+        </div>
     </div>
-</div>
 
 </body>
 <script src="js/crearevento.js"></script>
