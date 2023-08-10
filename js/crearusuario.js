@@ -15,7 +15,18 @@ function register(event) {
         alert('El nombre no puede quedar vacio');
 
     }
+
+    var idUser = localStorage.getItem("idUser");
+    if (idUser) {
+        idUser = parseInt(idUser) + 1;
+        localStorage.setItem("idUser", idUser);
+
+    } else {
+        idUser = 1;
+        localStorage.setItem("idUser", idUser);
+    }
     const newUser = {
+        id: idUser,
         username: username,
         password: password,
         name: name,
@@ -24,6 +35,7 @@ function register(event) {
 
     };
     saveUser(newUser);
+
 }
 // Esta función guarda un nuevo usuario en el almacenamiento local.
 function saveUser(user) {

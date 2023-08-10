@@ -9,17 +9,17 @@ boton.onclick = function () {
 }
 
 const eventos = JSON.parse(localStorage.getItem("eventos"));
-var nameLocal = localStorage.getItem('loggedIn');
-console.log(nameLocal);
+var idUsuario = localStorage.getItem('idUsuario');
+console.log(idUsuario);
 
 
-function crearTablaEventosUsuario(nameLocal) {
+function crearTablaEventosUsuario(idUsuario) {
     const tablaContainer = document.getElementById('tablaContainer');
     tablaContainer.innerHTML = ''; // Limpiamos el contenedor antes de crear la tabla
 
-    const eventosUsuario = new Array();
+    var eventosUsuario = new Array();
     if (eventos !== null) {
-        eventosUsuario = eventos.filter(evento => evento.user === nameLocal);
+        eventosUsuario = eventos.filter(evento => evento.user == idUsuario);
     }
 
     if (eventosUsuario.length === 0) {
@@ -128,7 +128,7 @@ function crearTablaEventosUsuario(nameLocal) {
     tablaContainer.appendChild(tabla);
 }
 
-crearTablaEventosUsuario(nameLocal);
+crearTablaEventosUsuario(idUsuario);
 
 
 
