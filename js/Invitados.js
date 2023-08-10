@@ -42,7 +42,7 @@ function register(event) {
     }
     const newInvitado = {
         id: idInvitado,
-        idEvento: eventoAgregarInvitados.id,
+        idEvento: eventoAgregarInvitados.idEvento,
         persona: persona,
         cantidadInvitados: cantidadInvitados,
         observaciones: observaciones,
@@ -58,7 +58,7 @@ function register(event) {
 
 
 var eventoAgregarInvitado = JSON.parse(localStorage.getItem('eventoEditado'));
-var idEvento = eventoAgregarInvitado.id;
+var idEvento = eventoAgregarInvitado.idEvento;
 function crearTablaEventosInvitados(idEvento) {
     var invitados = JSON.parse(localStorage.getItem("invitados"));
     const tablaContainer = document.getElementById('tablaContainer');

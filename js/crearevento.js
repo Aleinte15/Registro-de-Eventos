@@ -6,9 +6,9 @@ function crearEvento(event) {
     const cantidadInvitados = document.getElementById("cantidadInvitados").value;
 
 
-     // Obtiene el valor de "idEvento" del almacenamiento local.
+    // Obtiene el valor de "idEvento" del almacenamiento local.
     var idEvento = localStorage.getItem("idEvento");
-      // Si "idEvento" existe, incrementa su valor en 1 y actualiza el almacenamiento local.
+    // Si "idEvento" existe, incrementa su valor en 1 y actualiza el almacenamiento local.
     if (idEvento) {
         idEvento = parseInt(idEvento) + 1;
         localStorage.setItem("idEvento", idEvento);
@@ -17,18 +17,15 @@ function crearEvento(event) {
         idEvento = 1;
         localStorage.setItem("idEvento", idEvento);
     }
-     // Obtiene el nombre de usuario almacenado en el almacenamiento local.
-    var nameLocal = localStorage.getItem('loggedIn');
-     // Crea un objeto "nuevoEvento" con la información recopilada.
+    var idUsuario = localStorage.getItem('idUsuario');
+    // Crea un objeto "nuevoEvento" con la información recopilada.
     const nuevoEvento = {
-        id: idEvento,
+        idUser: idUsuario,
+        idEvento: idEvento,
         nombre: nombreResponsable,
         nombreEvento: nombreEvento,
         fechaEvento: fechaEvento,
-        cantidadInvitados: cantidadInvitados,
-        user: nameLocal
-
-
+        cantidadInvitados: cantidadInvitados
     };
     saveEvento(nuevoEvento);
 
@@ -47,14 +44,14 @@ boton.onclick = function () {
 
 
 function saveEvento(evento) {
-      // Convierte el objeto evento a una cadena JSON y lo almacena con la clave "eventoEditado".
+    // Convierte el objeto evento a una cadena JSON y lo almacena con la clave "eventoEditado".
     const eventoJSON = JSON.stringify(evento);
     localStorage.setItem("eventoEditado", eventoJSON);
-        // Obtiene la lista de eventos del almacenamiento local o crea una nueva lista vacía.
+    // Obtiene la lista de eventos del almacenamiento local o crea una nueva lista vacía.
     const eventos = JSON.parse(localStorage.getItem('eventos')) || [];
     eventos.push(evento);
     localStorage.setItem('eventos', JSON.stringify(eventos));
     alert("Evento creado")
-     // Redirige la página actual a 'invitados.html' después de realizar la acción.
+    // Redirige la página actual a 'invitados.html' después de realizar la acción.
     window.location.href = 'invitados.html';
 }

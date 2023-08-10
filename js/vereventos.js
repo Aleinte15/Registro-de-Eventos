@@ -19,7 +19,7 @@ function crearTablaEventosUsuario(idUsuario) {
 
     var eventosUsuario = new Array();
     if (eventos !== null) {
-        eventosUsuario = eventos.filter(evento => evento.id == idUsuario);
+        eventosUsuario = eventos.filter(evento => evento.idUser == idUsuario);
     }
 
     if (eventosUsuario.length === 0) {
@@ -72,12 +72,12 @@ function crearTablaEventosUsuario(idUsuario) {
         const storedData = JSON.parse(localStorage.getItem('eventos'));
 
         if (storedData) {
-            
+
             const updatedData = storedData.filter(item => item.id !== evento.id);
 
             localStorage.setItem('eventos', JSON.stringify(updatedData));
             const invitadosData = JSON.parse(localStorage.getItem('invitados'));
-            if (invitadosData){
+            if (invitadosData) {
                 const updatedInvitados = invitadosData.filter(item => item.id !== evento.id);
                 localStorage.setItem('invitados', JSON.stringify(updatedInvitados));
             }
@@ -86,7 +86,7 @@ function crearTablaEventosUsuario(idUsuario) {
         } else {
             console.log('No se encontraron datos en el Local Storage.');
         }
-        fila.remove(); 
+        fila.remove();
     }
 
     // Crea las filas de datos
