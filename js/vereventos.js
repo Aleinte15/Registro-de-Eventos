@@ -19,7 +19,7 @@ function crearTablaEventosUsuario(idUsuario) {
 
     var eventosUsuario = new Array();
     if (eventos !== null) {
-        eventosUsuario = eventos.filter(evento => evento.user == idUsuario);
+        eventosUsuario = eventos.filter(evento => evento.id == idUsuario);
     }
 
     if (eventosUsuario.length === 0) {

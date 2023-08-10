@@ -18,6 +18,7 @@ function login(event) {
             // Guardamos el estado de inicio de sesión en localStorage
             localStorage.setItem('loggedIn', username);
             localStorage.setItem('sessionActive', true);
+            localStorage.setItem('idUsuario', user.id);
 
             // Redirigimos a la página del menú
             window.location.href = 'menu.html';
